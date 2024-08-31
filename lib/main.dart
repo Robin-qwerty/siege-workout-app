@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
 
   // Define exercises with repetitions for each level
   final Map<String, Map<int, String>> _exerciseDetails = {
-    'Death in a round': {1: '3 push-ups', 2: '5 push-ups'},
+    'Death in a round': {1: '2 push-ups', 2: '5 push-ups'},
     'Choked a 1v1': {1: '5 burpees', 2: '10 burpees'},
     'Team kill': {1: '8 burpees', 2: '15 burpees'},
     'Lost a match': {1: '10 sit-ups', 2: '15 sit-ups'},
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
   };
 
   final Map<String, Map<int, int>> _exerciseRepetitions = {
-    'Death in a round': {1: 3, 2: 5},
+    'Death in a round': {1: 2, 2: 5},
     'Choked a 1v1': {1: 5, 2: 10},
     'Team kill': {1: 8, 2: 15},
     'Lost a match': {1: 10, 2: 15},
@@ -351,7 +351,8 @@ class _HomePageState extends State<HomePage> {
                 int total = _calculateTotal(event, level, count);
 
                 // Fetch exercise description from _exerciseDetails
-                String description = _exerciseDetails[event]?[level] ?? 'Description not available';
+                String description = _exerciseDetails[event]?[level] ??
+                    'Description not available';
 
                 return ListTile(
                   contentPadding: const EdgeInsets.symmetric(
